@@ -1,0 +1,81 @@
+import React, {useEffect} from 'react';
+import FullCalendar from 'fullcalendar'; 
+import interactionPlugin from "@fullcalendar/interaction";
+import timeGridPlugin from "@fullcalendar/timegrid";
+
+import 'fullcalendar/packages/core/main.css';
+import 'fullcalendar/packages/daygrid/main.css';
+import 'fullcalendar/packages/interaction/main.css';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'; // App.css에 전체 페이지 스타일이 있다고 가정
+
+const CalendarPage = () => {
+    useEffect(() => {
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                plugins: [
+                    'interaction', 'dayGrid'
+                ],
+                defaultDate: '2020-02-12',
+                editable: true,
+                eventLimit: true,
+                events: [
+                    {
+                        title: 'All Day Event',
+                        start: '2020-02-01'
+                    }, {
+                        title: 'Long Event',
+                        start: '2020-02-07',
+                        end: '2020-02-10'
+                    }, {
+                        groupId: 999,
+                        title: 'Repeating Event',
+                        start: '2020-02-09T16:00:00'
+                    }, {
+                        groupId: 999,
+                        title: 'Repeating Event',
+                        start: '2020-02-16T16:00:00'
+                    }, {
+                        title: 'Conference',
+                        start: '2020-02-11',
+                        end: '2020-02-13'
+                    }, {
+                        title: 'Meeting',
+                        start: '2020-02-12T10:30:00',
+                        end: '2020-02-12T12:30:00'
+                    }, {
+                        title: 'Lunch',
+                        start: '2020-02-12T12:00:00'
+                    }, {
+                        title: 'Meeting',
+                        start: '2020-02-12T14:30:00'
+                    }, {
+                        title: 'Happy Hour',
+                        start: '2020-02-12T17:30:00'
+                    }, {
+                        title: 'Dinner',
+                        start: '2020-02-12T20:00:00'
+                    }, {
+                        title: 'Birthday Party',
+                        start: '2020-02-13T07:00:00'
+                    }, {
+                        title: 'Click for Google',
+                        url: 'http://google.com/',
+                        start: '2020-02-28'
+                    }
+                ]
+            });
+
+            calendar.render();
+        });
+    }, []);
+
+    return (<div className="content">
+        <div id="calendar"></div>
+    </div>);
+};
+
+export default CalendarPage;

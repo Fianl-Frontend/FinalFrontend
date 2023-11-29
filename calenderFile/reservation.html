@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Webproject</title>
+  <link rel="stylesheet" href="calender.css">
+</head>
+
+<body>
+  <div class="calendar">
+    <div class="calendar_header">
+      <div class="calendar_nav">
+        <button class="nav-btn go-prev">&lt;</button>
+        <span class="year"></span>.&nbsp;
+        <span class="month"></span>.
+
+        <button class="nav-btn go-next">&gt;</button>
+      </div>
+    </div>
+    <div class="calendar_main">
+      <div class="days">
+        <div class="day">Sunday</div>
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+        <div class="day">Friday</div>
+        <div class="day">Saturday</div>
+      </div>
+      <div class="dates"></div>
+    </div>
+
+    <center>
+      <div class="resv-wrapper">
+        <div class="resv-bg">
+          <button class="resv-close">X</button>
+          <div class="resv_info">
+            <div class="resv_ym">
+              <div id="current_date">
+                <script>
+                  date = new Date();
+                  year = date.getFullYear();
+                  month = date.getMonth() + 1;
+                  day = date.getDate();
+                  document.getElementById("current_date").innerHTML = year + "." + " " + month + "." + " " + day + "." + " (Standard)";
+                </script>
+              </div>
+            </div>
+            <div class="resv-remain">
+              <span>Remaining 2 Digits </span>
+            </div>
+            <h3>
+              List of bookings
+            </h3>
+            <div class="resv-list">
+              <span>
+                <div id="container">
+                  <p>Hyeon-Min </p>
+                  <div class="toggle-switch">
+                    &nbsp;&nbsp;<input type="checkbox" id="toggle1">
+                    <label for="toggle1">
+                      <span class="toggle-track"></span>
+                    </label>
+                  </div>
+                </div>
+              </span>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <span>
+                <div id="container">
+                  <p>Yoon-Hee </p>
+                  <div class="toggle-switch">
+                    &nbsp;&nbsp;<input type="checkbox" id="toggle2">
+                    <label for="toggle2">
+                      <span class="toggle-track"></span>
+                    </label>
+                  </div>
+                </div>
+              </span>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <span>
+                <div id="container">
+                  <p>Waiting for reservation </p>
+                  <div class="toggle-switch">
+                    &nbsp;&nbsp;<input type="checkbox" id="toggle3">
+                    <label for="toggle3">
+                      <span class="toggle-track"></span>
+                    </label>
+                  </div>
+                </div>
+              </span>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <span>
+                <div id="container">
+                  <p>Waiting for reservation </p>
+                  <div class="toggle-switch">
+                    &nbsp;&nbsp;<input type="checkbox" id="toggle4">
+                    <label for="toggle4">
+                      <span class="toggle-track"></span>
+                    </label>
+                  </div>
+                </div>
+              </span>
+            </div>
+            <h3>
+              List of programs
+            </h3>
+            <div class="resv-event">
+              <p>Cupcake Master 1 <span>(AM: 10:00)</span></p>
+              <p>Cupcake Master 2 <span>(PM: 13:00)</span></p>
+              <p>Cupcake Master 3 <span>(PM: 16:00)</span></p>
+            </div>
+          </div>
+          <div class="resv_set">
+            <input class="resv_set time" type="time" name="" id="">
+            <button style="margin: 7px 0px 0px 0px; background-color: skyblue; height: 30px; border: 0px solid skyblue; color: white" class="resv_btn purchase">Reservation</button>
+            <button style="margin: 7px 0px 0px 0px; background-color: skyblue; height: 30px; border: 0px solid skyblue; color: white" class="resv_btn cancel">Reservation cancellation</button>
+          </div>
+        </div>
+      </div>
+    </center>
+
+  </div>
+  <script type="text/javascript" src="calender.js"></script>
+  <script type="text/javascript" src="reserve.js"></script>
+</body>
+
+</html>
