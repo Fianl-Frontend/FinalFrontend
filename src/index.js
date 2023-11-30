@@ -6,16 +6,16 @@ import MainPage from './mainPage';
 import SignupPage from './signupPage';
 import './login.css';
 import reportWebVitals from './reportWebVitals';
-// import CalendarPage from './calenderPage';
+import CalendarPage from './calenderPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Router>
         <Routes>
             <Route path='/' element={<LoginPage />} />
-            <Route path='/signupPage' element={<SignupPage />} />
             <Route path='/mainPage' element={<MainPage />} />
-            {/* <Route path='/mainPage/calenderPage' element={<CalendarPage />} /> */}
+            <Route path='/signupPage' element={<SignupPage />} />
+            <Route path='/calenderPage' element={<CalendarPage />} />
         </Routes>
     </Router>
 );
